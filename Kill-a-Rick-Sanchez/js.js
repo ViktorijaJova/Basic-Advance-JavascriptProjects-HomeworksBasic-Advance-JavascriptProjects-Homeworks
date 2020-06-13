@@ -35,6 +35,8 @@ setTimeout(()=> {
     portal.classList.remove('up');
     if(!timeup){
         popup();
+    }else {
+        alert("Game Over")
     }
 
 },timeset)
