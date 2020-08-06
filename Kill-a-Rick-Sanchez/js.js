@@ -10,6 +10,7 @@ let score = 0;
 
 
 function MakeRandomTime(min,max){
+
     return Math.round(Math.random()*(max-min) + min);
 }
 
@@ -27,28 +28,27 @@ function GetRandomPortal(portals){
 
 function popup(){
       
-    let timeset = MakeRandomTime(500,1000);
+    let timeset = MakeRandomTime(1000,1000);
     let portal = GetRandomPortal(portals);
-
    portal.classList.add('up');
+
 setTimeout(()=> {
     portal.classList.remove('up');
     if(!timeup){
         popup();
-    }else {
-        alert("Game Over")
     }
 
 },timeset)
 
 }
 
+
 function startGame(){
     timeup = false;
     displayscore.textContent = 0;
     score = 0;
     popup();
- setTimeout(()=> timeup = true, 15000)
+ setTimeout(()=> timeup = true, 45000)
  
 }
 
